@@ -1,5 +1,6 @@
 Descargue el proyecto;<br>
-Abra spring tool suite e importelo, luego ejecute;<br>
+Importe la base de datos panaderiajavadb.sql a su servidor local;<br>
+Importe el proyecto a spring tool suite, luego ejecute;<br>
 Dentro del navegador puede insertar las siguientes rutas definidas para obtener los datos: <br>
 
 <p align="center">Seccion Datos Cliente</p>
