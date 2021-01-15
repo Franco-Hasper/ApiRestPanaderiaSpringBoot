@@ -6,7 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -17,12 +21,15 @@ public class PrecioProducto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private Integer productoId;
+	@Autowired
+	@ManyToOne
+	@JoinColumn(name="productoid")
+	private Producto producto;
 	private Double precio_bruto;
 	private Date fecha;
 	private Double precio_total;
 	private Integer codigo_iva;
-	private Integer estadoId;
+	private Integer estadoid;
 	
 	public PrecioProducto() {}
 
@@ -34,13 +41,7 @@ public class PrecioProducto {
 		this.id = id;
 	}
 
-	public Integer getProductoId() {
-		return productoId;
-	}
-
-	public void setProductoId(Integer productoId) {
-		this.productoId = productoId;
-	}
+	
 
 	public Double getPrecio_bruto() {
 		return precio_bruto;
@@ -74,21 +75,33 @@ public class PrecioProducto {
 		this.codigo_iva = codigo_iva;
 	}
 
-	public Integer getEstadoId() {
-		return estadoId;
+
+	public Integer getEstadoid() {
+		return estadoid;
 	}
 
-	public void setEstadoId(Integer estadoId) {
-		this.estadoId = estadoId;
+	public void setEstadoid(Integer estadoid) {
+		this.estadoid = estadoid;
+	}
+
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
 
 	@Override
 	public String toString() {
-		return "PrecioProducto [id=" + id + ", productoId=" + productoId + ", precio_bruto=" + precio_bruto + ", fecha="
-				+ fecha + ", precio_total=" + precio_total + ", codigo_iva=" + codigo_iva + ", estadoId=" + estadoId
+		return "PrecioProducto [id=" + id + ", producto=" + producto + ", precio_bruto=" + precio_bruto + ", fecha="
+				+ fecha + ", precio_total=" + precio_total + ", codigo_iva=" + codigo_iva + ", estadoid=" + estadoid
 				+ "]";
 	}
+
 	
+
+
 	
 
 }

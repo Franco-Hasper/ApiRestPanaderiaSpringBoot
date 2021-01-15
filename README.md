@@ -17,7 +17,7 @@ localhost:8080/api/listaClientes/3
 <br>
 <p align="center">Seccion Datos Precios Productos</p>
 <br>
-Se obtiene un arreglo con todos los datos de la tabla precio_producto:
+Se obtiene un arreglo con todos los datos de la tabla precio_producto y un sub arreglo con los datos de la tabla productos:
 <br>
 localhost:8080/api/precioproductos
 <br><br>
